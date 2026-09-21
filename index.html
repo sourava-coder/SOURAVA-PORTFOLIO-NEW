@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Sourava Kumar Swain | Full Stack Developer &amp; AI Engineer</title>
+ <link rel="icon" type="image/png" href="logo.png">
+<meta name="description" content="Portfolio of Your Name, Full Stack Developer and AI Engineer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+
+<div class="loader-screen" id="loaderScreen" aria-live="polite" aria-label="Loading portfolio">
+  <div class="loader-core">
+    <div class="loader-badge">SK</div>
+    <div class="loader-name">Sourava Kumar Swain</div>
+    <div class="loader-bar"><span id="loaderFill"></span></div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
+  </div>
+</div>
+
+<div class="portfolio-shell" id="portfolioShell">
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#home"><span class="mark" id="brandMark">SK</span><span id="brandName">Sourava Kumar Swain</span></a>
+    <nav aria-label="Main"><ul id="navList"></ul></nav>
+    <div class="actions">
+      <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch colour theme"></button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="avail"><i class="dot"></i><span id="availText">Available to work</span></span>
+        <p class="hello">Hi, I'm</p>
+        <h1 id="heroName">Sourava Kumar Swain</h1>
+        <p class="role"><span class="sr-only" id="roleStatic"></span><span aria-hidden="true"><span id="roleText"></span><i class="caret"></i></span></p>
+        <p class="summary" id="heroSummary"></p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="#contact">Hire me</a>
+          <a class="btn" href="#resume">See resume</a>
+        </div>
+        <div class="socials" id="heroSocials"><span>Find me on</span></div>
+      </div>
+      <div class="portrait">
+        <div class="portrait-frame" id="portraitFrame"><span id="portraitInitials">SK</span></div>
+        <div class="float a"><i class="dot"></i><span id="floatA">Available to work</span></div>
+        <div class="float b" id="floatB">Full-Stack Developer</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="stats" id="stats"></div>
+      <div class="about-copy">
+        <h2>About me</h2>
+        <h3 id="aboutHeading"></h3>
+        <p id="aboutText"></p>
+        <dl class="facts" id="facts"></dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>My skills</h2>
+      <p class="lede">The tools and languages I use most, grouped so you can filter by area.</p>
+      <div class="chips" id="skillChips" role="group" aria-label="Filter skills"></div>
+      <div class="skills" id="skillGrid"></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Featured projects</h2>
+      <p class="lede">A few things I have built, from full stack platforms to machine learning tools.</p>
+      <div class="chips" id="projectChips" role="group" aria-label="Filter projects"></div>
+      <div class="cards" id="projectGrid"></div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="wrap">
+      <h2>My journey</h2>
+      <p class="lede">Internships, awards and milestones, newest first.</p>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <p class="lede">Where I studied and what I focused on.</p>
+      <div class="two" id="eduGrid"></div>
+      <h3 class="sub-h">Certifications</h3>
+      <div class="certs" id="certGrid"></div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="wrap">
+      <h2>Resume</h2>
+      <p class="lede">A one-page summary of my experience, skills and education.</p>
+      <div class="resume-actions">
+        <button class="btn primary" type="button" id="printBtn">Print or save as PDF</button>
+      </div>
+      <article class="paper" id="paper"></article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <h2>Let's talk about your project</h2>
+        <p class="lede">Reach out about collaborations, freelance work or job opportunities. I reply within a day or two.</p>
+        <dl class="info" id="info"></dl>
+        <div class="cta" id="contactBtns"></div>
+      </div>
+      <form id="contactForm">
+        <label>Your Name<input name="name" type="text" autocomplete="name" required></label>
+        <label>Your Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Your message<textarea name="message" required></textarea></label>
+        <button class="btn primary" type="submit">Send message</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#home"><span class="mark" id="footMark">SK</span><span id="footName">Sourava Kumar Swain</span></a>
+    <div class="socials" id="footSocials"></div>
+    <div>
+      <div id="copyright"></div>
+      <div class="clock">Local time in <span id="clockPlace"></span>: <span id="clock"></span></div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
