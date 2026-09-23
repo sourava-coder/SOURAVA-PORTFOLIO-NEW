@@ -141,9 +141,15 @@ NAV.forEach(([id]) => spy.observe($("#"+id)));
 
 /* ---------- Scroll progress ---------- */
 const bar = $("#progress");
+let scrollTick = false;
 function onScroll(){
-  const h = document.documentElement.scrollHeight - window.innerHeight;
-  bar.style.transform = `scaleX(${h > 0 ? Math.min(1, window.scrollY / h) : 0})`;
+  if (scrollTick) return;
+  scrollTick = true;
+  requestAnimationFrame(() => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? Math.min(1, window.scrollY / h) : 0})`;
+    scrollTick = false;
+  });
 }
 window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
@@ -249,21 +255,6 @@ const reveal = new IntersectionObserver(entries => {
 }, { threshold: .35 });
 document.querySelectorAll(".stat b").forEach(el => reveal.observe(el));
 
-const tiltTargets = document.querySelectorAll(".card, .stat, .edu, .cert, form");
-tiltTargets.forEach(el => {
-  el.addEventListener("pointermove", (e) => {
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.setProperty("--rx", `${(py * -12).toFixed(2)}deg`);
-    el.style.setProperty("--ry", `${(px * 14).toFixed(2)}deg`);
-  });
-  el.addEventListener("pointerleave", () => {
-    el.style.setProperty("--rx", "0deg");
-    el.style.setProperty("--ry", "0deg");
-  });
-});
-
 /* ---------- Filter helper ---------- */
 function filterBar(container, labels, onPick){
   container.innerHTML = labels.map((l,i) => `<button class="chip-btn" type="button" aria-pressed="${i===0}" data-v="${esc(l)}">${esc(l)}</button>`).join("");
@@ -314,19 +305,22 @@ $("#timeline").innerHTML = P.journey.map(j => `
   </li>`).join("");
 
 const revealTargets = document.querySelectorAll(".card, .stat, .edu, .cert, .tl, .skill, form, .site-header nav a");
-revealTargets.forEach((el, i) => {
-  el.classList.add("reveal");
-  const obs = new IntersectionObserver(entries => {
+revealTargets.forEach(el => el.classList.add("reveal"));
+
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealTargets.forEach(el => el.classList.add("in"));
+} else {
+  const revealObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("in");
-        obs.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.18 });
-  obs.observe(el);
-  setTimeout(() => el.classList.add("in"), i * 80);
-});
+
+  revealTargets.forEach(el => revealObserver.observe(el));
+}
 
 /* ---------- Education + certs ---------- */
 $("#eduGrid").innerHTML = P.education.map(e => `

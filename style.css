@@ -36,7 +36,7 @@ body{position:relative;margin:0;background:
   radial-gradient(circle at 25% 20%, rgba(52,211,255,.25), transparent 18%),
   radial-gradient(circle at bottom right, rgba(255,94,188,.18), transparent 24%),
   linear-gradient(135deg, #f5f9ff 0%, #e7eeff 18%, var(--bg) 48%, #edf5ff 100%);
-  color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden;animation:backgroundDrift 16s ease-in-out infinite alternate}
+  color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.loading{overflow:hidden}
 .portfolio-shell{opacity:0;transform:translateY(20px);transition:opacity .9s ease, transform .9s ease}
 body:not(.loading) .portfolio-shell{opacity:1;transform:translateY(0)}
@@ -67,9 +67,9 @@ body:not(.loading) .portfolio-shell{opacity:1;transform:translateY(0)}
       linear-gradient(135deg, #050b16 0%, #0b1120 28%, #111827 55%, #09111d 100%);
   }
 }
-body::before, body::after{content:"";position:fixed;inset:auto;z-index:-1;border-radius:50%;filter:blur(70px);pointer-events:none;animation:floatGlow 12s ease-in-out infinite alternate}
+body::before, body::after{content:"";position:fixed;inset:auto;z-index:-1;border-radius:50%;filter:blur(60px);pointer-events:none;opacity:.72}
 body::before{width:500px;height:500px;left:-140px;top:40px;background:rgba(110,140,255,.22)}
-body::after{width:560px;height:560px;right:-170px;bottom:0;background:rgba(89,200,255,.18);animation-delay:-5s}
+body::after{width:560px;height:560px;right:-170px;bottom:0;background:rgba(89,200,255,.18)}
 h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;letter-spacing:-.02em}
 a{color:var(--accent)}
 img{max-width:100%}
@@ -83,7 +83,6 @@ section h2{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;margin-bottom:12px
 .lede{color:var(--muted);max-width:60ch;margin:0 0 40px}
 
 /* Global motion polish */
-*{transition:background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease,transform .25s ease,opacity .25s ease}
 html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 76px)}
 
 /* Header */
