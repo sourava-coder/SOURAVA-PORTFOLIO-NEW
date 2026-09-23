@@ -28,7 +28,7 @@ const P = {
   about: "I'm a final-year engineering student who enjoys turning ideas into working products, from hackathon prototypes to full stack apps. I work across the stack with JavaScript, React, Node.js and Python, and I am growing my skills in machine learning and computer vision. Replace this paragraph with your own story: what you study, what you have built and what you are looking for.",
   facts: [
     ["Achievements", "1st place at a university project exhibition. Hackathon winner."],
-    ["Education", "B.Tech in Computer Science and Data Science (2023 to 2027)."],
+    ["Education", "B.Tech in Computer Science and Data Science (2026 to 2030)."],
     ["Current focus", "Machine learning models, OpenCV and full stack platforms."]
   ],
   skills: [
