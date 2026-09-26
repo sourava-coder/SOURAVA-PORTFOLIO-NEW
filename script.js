@@ -2,7 +2,7 @@
    EDIT YOUR DETAILS HERE. Everything on the page is built from this object.
    ============================================================ */
 const P = {
-  name: "Sk Rahim Alli",
+  name: "Sourava Kumar Swain",
   roles: ["Full Stack Developer", "AI Engineer", "Problem Solver"],
   availability: "Available to work",
   badge: "Full-stack Developer",
@@ -10,16 +10,16 @@ const P = {
   photo: "hero.png",                       // paste an image URL or data URI here to replace the initials
   location: "Bhubaneswar, India",
   timezone: "Asia/Kolkata",
-  email: "skrahimalli08@gmail.com",
-  phone: "+917606049822",
+  email: "souravkumarswain3333@gmail.com",
+  phone: "+919692618822",
   summary: "Full Stack Developer and AI Engineer who builds scalable web apps and practical machine learning tools. Open to internships, freelance projects and collaborations.",
   socials: {
-    linkedin: "https://www.linkedin.com/in/skrahimalli",
-    github: "https://github.com/rahim-sheakh",
-    whatsapp: "https://wa.me/+917606049822"
+    linkedin: "https://www.linkedin.com/in/souravakumarswain",
+    github: "https://github.com/sourava-coder",
+    whatsapp: "https://wa.me/+919692618822"
   },
   stats: [
-    { value: 5, suffix: "+", label: "Projects built" },
+    { value: 20, suffix: "+", label: "Projects built" },
     { value: 500, suffix: "+", label: "Git commits" },
     { value: 8.0, dec: 1, suffix: "", label: "CGPA (B.Tech)" },
     { value: 3, suffix: "+", label: "Hackathons won" }
@@ -63,7 +63,7 @@ const P = {
   education: [
     { yrs: "2026 to 2030", title: "B.Tech in Computer Science and Data Science", org: "Bhubaneswar Engineering College, Bhubaneswar",
       text: "Core subjects, machine learning, data structures and algorithms, database systems and AI.", score: "CGPA: 8.0" },
-    { yrs: "2024 to 2026", title: "+2 Science", org: "Sabitri Davi Higher Secondary School of Science , Salepur",
+    { yrs: "2024 to 2026", title: "+2 Science", org: "UNOPOS Higher Secondary School of Science,Tirtol",
       text: "CSS, HTML and Java, web development basics, database management and computer networks.", score: "Score: 81%" }
   ],
   certs: [
