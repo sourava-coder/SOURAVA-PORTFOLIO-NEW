@@ -19,7 +19,7 @@ const P = {
     whatsapp: "https://wa.me/+919692618822"
   },
   stats: [
-    { value: 10, suffix: "+", label: "Projects built" },
+    { value: 20, suffix: "+", label: "Projects built" },
     { value: 500, suffix: "+", label: "Git commits" },
     { value: 8.0, dec: 1, suffix: "", label: "CGPA (B.Tech)" },
     { value: 3, suffix: "+", label: "Hackathons won" }
